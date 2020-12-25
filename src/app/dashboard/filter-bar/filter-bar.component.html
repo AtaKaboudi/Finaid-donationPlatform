@@ -1,0 +1,68 @@
+<div class ="filterBar">
+
+    <div class ="inputForm">
+        <input class="searchBar" #input >
+        <div class="dropSearch" id="Show">
+            <h3 style="color:white; margin-left:20px;">Recently Searched</h3>
+            <h3 style="margin-left:50px;color:white">Charity</h3>
+
+            <div  *ngFor ="let element of searchUtils[0]" class="chip" style="color:white ;display:inline-block">
+              <button style="border:none;border-radius:12px;" (click)="search('Charity',element)">{{element}}</button>
+                <span class="glyphicon glyphicon-ok" aria-hidden="true" style="margin-right:10px;display:inline-block;color:#555555;font-size:12px;"></span>
+            </div>
+            <h3 style="margin-left:50px;color:white">Events</h3>
+
+            <div  *ngFor ="let element of searchUtils[1]" class="chip" style="color:white ;display:inline-block">
+                <button style="border:none;border-radius:12px;" (click)="search('Event',element)">{{element}}</button>
+                  <span class="glyphicon glyphicon-ok" aria-hidden="true" style="margin-right:10px;display:inline-block;color:#555555;font-size:12px;"></span>
+              </div>    
+        </div>
+          <button class="searchButton" (click) ="search('Event',input.value)">
+                <span class="glyphicon glyphicon-search" style="display:block;color:rgba(255,255,255,0.5);margin-top:0px;font-size:15px;"></span>
+                Event
+         </button>
+         <button class="searchButton" (click) ="search('Charity',input.value)">
+                <span class="glyphicon glyphicon-search" style="display:block;color:rgba(255,255,255,0.5);margin-top:0px;font-size:15px;"></span>
+                Charity
+         </button>
+    </div>
+
+
+      
+            
+    <div class="dropdown">
+     <button class="filterButton">
+         Type
+         <span class="glyphicon glyphicon-menu-down" style="margin-left:5px;font-size: 15px;color:#555555"></span>
+        </button>
+        <div class="dropDown-content">
+          <button class="dropDownButton" (click)='applyFilter("Type","Sport")' >Sport</button>
+          <button class="dropDownButton" (click)='applyFilter("Type","Culture")'>Culture</button>
+          <button class="dropDownButton" (click)='applyFilter("Type","Social")'>Social</button>
+          <button class="dropDownButton" (click)='applyFilter("Type","Ecological")'>Ecological</button>
+          <button class="dropDownButton" (click)='applyFilter("Type","Awareness")'>Awareness</button>
+
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="filterButton">
+            Budget
+            <span class="glyphicon glyphicon-menu-down" style="margin-left:5px;font-size: 15px;color:#555555"></span>
+           </button>
+           <div class="dropDown-content">
+             <button class="dropDownButton"(click)='applyFilter("Budget","10")' > 10</button>
+             <button class="dropDownButton" (click)='applyFilter("Budget","100")'>100</button>
+             <button class="dropDownButton" (click)='applyFilter("Budget","1000")'>1000</button>
+           </div>
+       </div>
+      
+       <button class="filterButton" (click)='applyFilter("","")'>
+           Recent
+           <span class="glyphicon glyphicon-menu-down" style="margin-left:5px;font-size: 15px;color:#555555"></span>
+        </button>
+
+   
+
+   
+
+</div>

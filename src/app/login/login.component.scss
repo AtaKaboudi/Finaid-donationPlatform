@@ -1,0 +1,48 @@
+div.loginBlock {
+    background-color:rgb(231, 222, 222);
+    position: absolute;
+    top:120px;
+    left:60%;
+    width: 35%;
+    height: 55%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 20px;
+    
+    }
+    .input{
+        margin-left: 20%;
+        border-radius:12px;
+        width:300px;
+        border:2px solid black;
+        height:25px
+    
+    }
+    .loginButton{
+        margin-top:30px;
+        color: white; 
+        background-color: #008CBA ;
+        font-size:15px;
+       margin-left:30%;
+        border:none;
+        border-radius:8px;
+        width:200px;
+        height:30px;
+    }
+    
+    .siteDescription{
+        color:white; 
+        width:300px;
+        margin-left:20%;
+        margin-top:10%;
+        font-size: 35px;;
+        text-align: center;
+    }
+    .descriptionContainer {
+        position:absolute;
+        top:12%;
+        left:10%;
+        width:500px;
+        height:550px;
+        background-color: rgb(0,151,136);
+        border-radius: 12px;
+    }

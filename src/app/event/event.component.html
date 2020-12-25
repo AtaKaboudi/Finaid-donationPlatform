@@ -1,0 +1,79 @@
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+
+<div class="container-fluid" style ="height:300px;width:100%; background-color:#12232E">
+    <div style ="width:60%; display:inline-block;margin-top:2%;">
+        <h1 class="charityTitle" >{{eventInfo.charity}}</h1>
+        <h3 class="sloganTitle" >' {{charityInfo.slogan}} '</h3>
+    </div>
+    <div style ="display:inline-block;width:fit-content " >
+    <h1 class="rating" >{{charityInfo.rating}}</h1>
+    <h1 class="" style="margin-top:-5%;margin-left:30%;color:#4DA8DA;" >Rating</h1>
+    </div>
+    <button class="learnMoreButton" routerLink ="/charity/{{charityInfo._id}}">Learn More
+        <i class="material-icons" style ="color:white;font-size:40px;display:block">forward</i>
+
+    </button>
+</div>
+
+<div class="container-fluid" style ="margin-top:20px;margin-left:-3%; " >
+    <div style ="display: inline-block;width:50%; position:flex">
+        <img src="{{eventInfo.image}}" style ="width:100%; height:600px;">
+    </div>
+    
+    <div class="eventInfoContainer">
+        <h1 class ="eventTitle">{{eventInfo.name}}</h1>
+        <p class="eventDescription">{{eventInfo.longDescription}}</p>
+
+        <h1 class="eventDetails">{{eventInfo.time}}</h1>
+        <h1 class="eventDetailsTitle" >Date</h1>  
+        
+        <h1 class="eventDetails">{{eventInfo.type}}</h1>
+        <h1 class="eventDetailsTitle" >Type</h1> 
+
+        <h1 class="eventDetails">{{eventInfo.current_budget}}</h1>
+        <h1 class="eventDetailsTitle" >Budget</h1> 
+
+
+    </div>
+
+
+    <div class="container-fluid" style ="margin-top:30px;">
+        <button class="eventButton">
+           <h1 class="donateTitle">Donate</h1> 
+           <i class="material-icons" style ="display:inline-block;color:#007CC7;font-size:30px;">payments</i>
+            <p style ="color:black;font-size:20px;">Help {{eventInfo.charity}} achieve their goals. Donations are directly transefered to the  charities bank account. the charity will be held acountable for the money and it's use</p>
+        </button>
+
+        <button class="eventButton">
+            <h1 class="donateTitle">Rate </h1> 
+            <button>
+                <i class="material-icons" style ="display:inline-block;color:#007CC7;font-size:30px;">thumb_up_alt</i>
+            </button>
+            <button>
+                <i class="material-icons" style ="display:inline-block;color:#007CC7;font-size:30px;">thumb_down_alt</i>
+            </button>
+                <p style ="color:black;font-size:20px;">Help us better manage our site by ranking {{eventInfo.charity}} </p>
+            </button>
+
+            <div class="logoContainer">     
+                <i class="material-icons" style ="color:white;font-size:40px;margin-top:20%;margin-left:50%;">accessibility</i>
+                <h1 style ="margin-left:20%;font-size:30px;color:white;"> Thank you for your Interest </h1>
+            </div>
+    </div>
+
+
+    <div class= "commentSection">
+        <h1>Comments</h1>
+        <div  class="comment" *ngFor =" let e of eventInfo.comments">
+            <p style="font-size:18px;">{{e}}</p>
+        </div>
+        <input style ="width:60% ;margin-top:4%;margin-left:10%;margin-bottom:3%;" #commentInput>
+        <button style ="display:inline-block" (click)= "addComment(commentInput.value)">Comment</button>
+    </div>
+
+</div>
+
+

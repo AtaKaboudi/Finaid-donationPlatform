@@ -1,0 +1,100 @@
+.filterBar {
+    margin-top:30px;
+    width:100%;
+    border-radius: 12px;
+}
+.filterButton{
+    display: inline-block;
+    color:#555555;
+     border:none;
+    font-size: 20px;
+    height:max-content;
+    background-color:rgba(255,255,255,0.1);
+    position:relative;
+}
+
+
+
+
+.dropdown {
+    display: inline-block;
+  }
+  
+  .dropDown-content {
+    display: none;
+    position: absolute;
+    background-color: #555555;
+    width:fit-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropDown-content {
+    display:list-item;
+  }
+  .dropDownButton {
+  width:100%;
+  background-color: #555555;
+  border:none;font-size: 25px;
+  color:white;
+  }
+
+  .searchBar {
+    width:80%;
+    height:45px;
+    border:none;
+    background-color: #555555;
+    color:white;
+    border-right: 2px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size :30px;
+    color : rgba(255,255,255,0.7);
+    margin-bottom:0px;
+
+  }
+  .inputForm {
+    display:inline-block
+    ;width: 60%;margin-right: 7%;
+    background-color: #555555;
+    margin-left:7%;
+    height:fit-content !important;
+    
+  }
+  .inputForm:hover .dropSearch {
+     display: block;
+  }
+
+
+  //DROPDOWN SEARCH 
+  .dropSearch  {
+    border-top: 1px solid white;
+     display:none ; 
+      background-color: #555555;
+      position: absolute;
+      width:55%;
+  }
+  .chip {
+    border-radius : 20px;
+    background-color: white;
+    text-align:center;
+    width: fit-content ;
+    height: fit-content;
+    font-size: 15px;
+   color: black !important ;
+   display:inline-block;
+   margin-left:20px;
+   margin-top:10px;
+   margin-bottom:10px;
+  }
+
+  .searchButton{
+    height:fit-content;
+    width:fit-content;
+    background: #555555;
+    color:rgba(255,255,255,0.5);
+    border:none;
+    font-size:19px;
+    position: relative;
+    bottom:15px;
+  }

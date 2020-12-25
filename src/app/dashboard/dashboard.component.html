@@ -1,0 +1,32 @@
+
+<div *ngFor ='let app of cards' style ="display: inline-block;width:25%;">
+    <app-card [title]= app.title [image]= app.image></app-card>
+</div>
+
+<div class="statContainer" >
+    <div class="statInfo" *ngFor ='let a of stats'>
+     <h1 style="font-size: 55px;margin:0px;color: white" >{{a.value}}</h1>
+    <h1 style="font-size: 30px;margin:0px; color:white" >{{a.title}}</h1>
+   </div>
+
+</div>
+
+
+<div class="container-fluid" style="margin:40px;margin-bottom: 50px;border-bottom: 2px solid #555555;">
+    <h1 style ="width:fit-content;margin-left:5%; font-size:70px;color: #555555;border-bottom: 2px solid white;"> Events</h1>
+
+  <app-filter-bar (filterEvent)="applyFilter($event)" (searchEvent)="search($event)"></app-filter-bar>
+
+    <div class="eventCard" *ngFor='let a of initiatives'>
+       <app-event-card [name]= a.name [charity]= a.charity [current_budget]=a.current_budget [image]=a.image [id]= a._id></app-event-card>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+

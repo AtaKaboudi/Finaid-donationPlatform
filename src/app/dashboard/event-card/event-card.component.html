@@ -1,0 +1,6 @@
+<button class="buttonEvent" routerLink = "/event/{{this.id}}" >
+    <img style="width:100%" src ="{{this.image}}">
+    <h1 style="width:fit-content;font-size:65px;color:#555555;">{{current_budget }}<span class="glyphicon glyphicon-eur" style="font-size: 30px;"></span></h1>
+    <h1 style="width:fit-content;  color:#555555;">{{name}}</h1>
+    <h2 [ngStyle]="{'background-color':getColor()}" style="color:white;text-align: left;">{{charity}}</h2>
+</button>

@@ -1,0 +1,29 @@
+<div style ="background-color:#12232E;margin-top:-20px;">
+<h1 class="charityName">{{charityInfo.name}}</h1>
+<h1 class="charityRating" >{{charityInfo.rating}}</h1>
+</div>
+
+
+<div class="charityInfoContainer">
+    <h1 class="infoIndicator" style ="font-size:35px;height:50px;"> Info </h1>
+    <img style ="margin-left:10%;"src ='{{charityInfo.logo}}'>
+    <h1 class="infoIndicator"> slogan </h1>
+    <h3 style ="text-align: center;">{{charityInfo.slogan}}</h3>
+    <h1 class="infoIndicator" > location </h1>
+    <h3 style ="text-align: center;">{{charityInfo.location}}</h3>
+</div>
+<div class="eventContainer">
+    <h1>Previous Events</h1>
+    <button class="event" *ngFor ="let e of charityInfo.initiatives">
+        <h1 style ="font-size:25px; margin-left:5%;">{{e}}</h1>
+    </button>
+</div>
+<div class="container-fluid">
+    <div class="contactContainer">
+        <h1 style ="text-align: center;background-color: firebrick;color:white">Contact</h1>
+        <h3 *ngFor = "let e of charityInfo.contact" style ="text-align: center;">{{e}}</h3>
+    </div>
+    <div class="donationContainer">
+        <h1>{{totalDonations}}</h1>
+    </div>
+</div>

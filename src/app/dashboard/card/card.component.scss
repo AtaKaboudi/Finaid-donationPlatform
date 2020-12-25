@@ -1,0 +1,24 @@
+.cardImage{
+    margin-left:-10px;
+    height: 100%;
+    width: 105%;
+}
+.cardTitle{
+    margin:0px;
+    position: relative;  
+    right:  30%;
+    bottom:20%;
+    color:white;
+}
+.buttonContaienr{
+    margin:0px;
+    height:600px;
+    width:100%;   
+    border:none;
+
+    
+}
+.cardImage:hover{
+    margin-left:-10px;
+    width:110%;   
+}

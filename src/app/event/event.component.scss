@@ -1,0 +1,115 @@
+.charityTitle{
+    color:white;font-size:70px;font-family: Arial, Helvetica; margin-top: 7%;margin-left:20%;
+}
+.sloganTitle {
+    color:white;font-size:45px;font-family: Arial, Helvetica;margin-top:-1%;margin-left:20%;
+}
+.rating {
+   top:30%;
+   margin-left:30%;
+    color: #EEFBFB;
+    font-size:80px;
+}
+
+.eventInfoContainer {
+    display:inline-block;
+    width:50%; 
+    position: absolute;
+}
+
+.eventTitle {
+     font-size: 40px;
+     color:#4DA8DA;
+     height:fit-content;
+     position: relative;
+     left:30%;
+}
+.eventDescription {
+    margin-left: 5%;
+    margin-top: 10%;
+    font-size:20px;
+    border-bottom: 1px solid #12232E ;
+    border-top: 1px solid #12232E ;
+
+}
+
+.eventDetails {
+    margin-left: 30%;
+    margin-top: 7%;
+    color: #4DA8DA;
+    width:fit-content
+}
+.eventDetailsTitle {
+    margin-left: 32%;
+    margin-top: -1%
+}
+
+.eventButton {
+display: inline-block;
+margin-left:5%;
+border-color: #007CC7  ;
+color : white;
+border-radius : 12px;
+width:300px;
+
+}
+
+.donateTitle {
+    height: 50px;
+    width: 100%;
+    border:none;
+    padding:0;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+
+.logoContainer {
+    display: inline-block;
+    margin-left:10%;
+    background-color: #12232E;
+    width:33%;
+    height:300px;
+    border-radius:12px;
+    position: absolute;
+    margin-top:20px;
+}
+
+
+.commentSection {
+    width:60%;    
+    margin-left:10%;
+    margin-top:50px;
+    border-radius:12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+.comment {
+    margin-left : 10%;
+    margin-top:5%;
+    border-bottom: 1px solid #007CC7;
+    width:60%;
+}
+.learnMoreButton {
+    background-color: #12232E ;
+    display:inline-block;
+    position: absolute;
+    margin-left:20%;
+    margin-top:10%;
+    height:5%;
+    color: white;
+    border:none;
+}
+/*
+Dark Blue: #12232E
+
+Lighter Blue: #007CC7
+
+Lightest Blue: #4DA8DA
+
+Shadow of Dark Blue: #203647
+
+Shadow of Light Blue: #EEFBFB
+
+ */
