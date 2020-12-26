@@ -20,10 +20,14 @@ export class EventComponent implements OnInit {
   }
 
 
-  addComment(comment){
-    this.eventInfo.comments.push(comment);
+ async  addComment(Addedcomment){
+   await this.eventInfo.comments.push(Addedcomment);
+    this.http.post("http://localhost:3000/initiative/comment", {id:this.eventId,comments:this.eventInfo.comments}).toPromise();
   }
-
+  rate( a: number){
+ this.http.post("http://localhost:3000/charity/rating",{name : this.charityInfo.name, rating:a}).toPromise().then((res: any)=>console.log(res));
+  
+  }
   async fetchWebData(){
 
     await this.http.get ("http://localhost:3000/initiative/"+this.eventId).toPromise().then((res)=>{

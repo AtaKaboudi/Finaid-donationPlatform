@@ -49,10 +49,10 @@
 
         <button class="eventButton">
             <h1 class="donateTitle">Rate </h1> 
-            <button>
+            <button (click)= 'rate(1)'>
                 <i class="material-icons" style ="display:inline-block;color:#007CC7;font-size:30px;">thumb_up_alt</i>
             </button>
-            <button>
+            <button (click)= 'rate(-1)'>
                 <i class="material-icons" style ="display:inline-block;color:#007CC7;font-size:30px;">thumb_down_alt</i>
             </button>
                 <p style ="color:black;font-size:20px;">Help us better manage our site by ranking {{eventInfo.charity}} </p>

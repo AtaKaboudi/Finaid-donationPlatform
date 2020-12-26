@@ -1,6 +1,12 @@
-<div style ="background-color:#12232E;margin-top:-20px;">
-<h1 class="charityName">{{charityInfo.name}}</h1>
-<h1 class="charityRating" >{{charityInfo.rating}}</h1>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+
+
+<div style ="background-color:#12232E; height:300px;">
+    <h1 class="charityName">{{charityInfo.name}}</h1>
+    <h1 class="charityRating" >{{charityInfo.rating}}</h1>
 </div>
 
 
@@ -24,6 +30,9 @@
         <h3 *ngFor = "let e of charityInfo.contact" style ="text-align: center;">{{e}}</h3>
     </div>
     <div class="donationContainer">
-        <h1>{{totalDonations}}</h1>
+        <h1 style ="text-align:center;margin-top: 20% ">{{totalDonations}}</h1>
+        <i class="material-icons" style ="display:inline-block;color:#007CC7;font-size:30px;margin-left:43%;">payments</i>
+        <h1 style ="text-align:center;margin-bottom: 20% ">Total Donations</h1>
+
     </div>
 </div>
