@@ -11,18 +11,25 @@
 </div>
 
 <div class="loginBlock">
+
         <h1 style="margin-left: 30%; margin-top:10%;color:#008CBA">Welcome</h1>
         <i class="glyphicon glyphicon-user" style="margin-top:5%;font-size: 50px ;left:40%;color:#008CBA;"></i>
-
-        <form >
+        <form *ngIf="!authStatus">
           <h2 style = "margin-top:5%;margin-left:20%; color:#555555">Username</h2>
             <input class="input" #username>
 
           <h2 style = " margin-top:5%;margin-left:20%; color:#555555"> Password</h2>
             <input class="input" #password>
-          <button class="loginButton" (click)="login(username.value,password.value)"> Log In</button>       
+          <button class="loginButton" type ="button" (click)="login(username.value,password.value)"> Log in</button>               
+          <button style ="display:block; position:relative;left:45%;background-color: #008CBA;color:white;border:none;margin-top:5%;">Sign up</button>
         </form> 
+        <div *ngIf="authStatus">
+          <i class="glyphicon glyphicon-ok" style="text-align:center;width:100%;font-size: 85px ;color:#008CBA;margin-top:16%;"></i>
+          <button class="loginButton" type ="button" (click)="logout()"> Log Out</button>               
 
+        </div>
  </div>
+ <button style ="background-color: black;" (click)= "test()" ></button>
+
 
   

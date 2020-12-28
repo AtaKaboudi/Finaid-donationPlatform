@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from '../services/auth-service.service';
+import { CommonModule } from '@angular/common';  
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,16 +10,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
- userame;
-  constructor() {
+  authStatus   : Boolean ;
+  constructor(private authService : AuthServiceService,private router :Router) {
    
    }
-   login(username,password){
-    alert(username+"/"+password);
+  async login(username,password){
+   await this.authService.signIn(username,password);
+    this.authStatus = this.authService.isAuth;
+    this.router.navigate(['dashboard']);
     }
-
-
+    logout(){
+      this.authService.isAuth = false;
+      this.authStatus = this.authService.isAuth;
+    }
+test(){
+  alert(this.authStatus);
+}
+  
   ngOnInit(): void {
+    this.authStatus = this.authService.isAuth;
   }
 
 }
