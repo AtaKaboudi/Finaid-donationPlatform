@@ -4,35 +4,32 @@
 
 
 
-<div style ="background-color:#12232E; height:300px;">
+<div style ="background-color:#12232E; height:9%;margin-top:-20px;">
     <h1 class="charityName">{{charityInfo.name}}</h1>
-    <h1 class="charityRating" >{{charityInfo.rating}}</h1>
+</div>
+<div >
+    <h1 class ='primaryInfo' style ='margin-left:5%'>{{charityInfo.slogan}}<h4>Slogan</h4></h1>
+    <h1 class ='primaryInfo'style ='color:firebrick'>{{charityInfo.rating}}<h4>Rating</h4></h1>
+    <h1 class ='primaryInfo'>{{charityInfo.location}}<h4>Location</h4></h1>
 </div>
 
+<div style ='margin-top:10% ;border-top: 1px solid #12232E;border-bottom:1px solid #12232E'>
+    <div class="secondaryInfoContainer"style ='display:inline-block;margin-left:5%;'>
 
-<div class="charityInfoContainer">
-    <h1 class="infoIndicator" style ="font-size:35px;height:50px;"> Info </h1>
-    <img style ="margin-left:10%;"src ='{{charityInfo.logo}}'>
-    <h1 class="infoIndicator"> slogan </h1>
-    <h3 style ="text-align: center;">{{charityInfo.slogan}}</h3>
-    <h1 class="infoIndicator" > location </h1>
-    <h3 style ="text-align: center;">{{charityInfo.location}}</h3>
-</div>
-<div class="eventContainer">
-    <h1>Previous Events</h1>
-    <button class="event" *ngFor ="let e of charityInfo.initiatives">
-        <h1 style ="font-size:25px; margin-left:5%;">{{e}}</h1>
-    </button>
-</div>
-<div class="container-fluid">
-    <div class="contactContainer">
-        <h1 style ="text-align: center;background-color: firebrick;color:white">Contact</h1>
-        <h3 *ngFor = "let e of charityInfo.contact" style ="text-align: center;">{{e}}</h3>
+        <h1 class="secondaryInfo" style='text-align: center;'>Logo</h1>
+        <img src ="{{charityInfo.logo}}">
     </div>
-    <div class="donationContainer">
-        <h1 style ="text-align:center;margin-top: 20% ">{{totalDonations}}</h1>
-        <i class="material-icons" style ="display:inline-block;color:#007CC7;font-size:30px;margin-left:43%;">payments</i>
-        <h1 style ="text-align:center;margin-bottom: 20% ">Total Donations</h1>
-
+    <div class ="secondaryInfoContainer">
+        <h1 class="secondaryInfo"style ='text-align: center;'>Contact</h1>
+        <h4 *ngFor="let element of charityInfo.contact" style ='text-align: center;'>{{element}}</h4>
     </div>
+    <div class="secondaryInfoContainer">
+    <h1 style ='text-align: center;'>{{totalDonations}}<h4>Total Donations</h4></h1>
+    <h1 style ='text-align: center;'>{{totalEvents}}<h4>Events</h4></h1>
+    </div>
+</div>
+
+<div style = 'margin-left:20%;margin-bottom:10%;'>
+    <h1 style ='margin-bottom:5%;'>Events</h1>
+    <button class="eventButton" (click)="navigateEvent(e)" *ngFor ='let e of charityInfo.initiatives' >{{e}}</button>
 </div>

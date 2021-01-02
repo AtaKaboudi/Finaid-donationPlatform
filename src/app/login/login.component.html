@@ -20,14 +20,17 @@
 
           <h2 style = " margin-top:5%;margin-left:20%; color:#555555"> Password</h2>
             <input class="input" #password>
-          <button class="loginButton" type ="button" (click)="login(username.value,password.value)"> Log in</button>               
+             <div *ngIf = "try != 0">
+               <h4 style ='color:red; width:100%;text-align: center;'>Try again</h4>
+             </div>  
+          <button class="loginButton" type ='button' (click)="login(username.value,password.value)"> Log in</button>               
           <button style ="display:block; position:relative;left:45%;background-color: #008CBA;color:white;border:none;margin-top:5%;">Sign up</button>
         </form> 
         <div *ngIf="authStatus">
           <i class="glyphicon glyphicon-ok" style="text-align:center;width:100%;font-size: 85px ;color:#008CBA;margin-top:16%;"></i>
-          <button class="loginButton" type ="button" (click)="logout()"> Log Out</button>               
-
+          <button class="loginButton"  (click)="logout()"> Log Out</button>               
         </div>
+        
  </div>
  <button style ="background-color: black;" (click)= "test()" ></button>
 

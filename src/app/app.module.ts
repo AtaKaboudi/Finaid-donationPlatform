@@ -18,6 +18,7 @@ import { CommonModule } from '@angular/common';
 import { CharityDashboardComponent } from './charity-dashboard/charity-dashboard.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthServiceService } from './services/auth-service.service';
+import { EventManagerComponent } from './charity-dashboard/event-manager/event-manager.component';
 
 const appRoute : Routes = [
 {path: 'aboutus', component : AboutusComponent},
@@ -30,6 +31,7 @@ const appRoute : Routes = [
 {path:'charitydashboard/:id',canActivate:[AuthGuard],component:CharityDashboardComponent},
 {path:'**', redirectTo:'/notFound'}
 ]
+//,canActivate:[AuthGuard]
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ const appRoute : Routes = [
     EventComponent,
     CharityComponent,
     CharityDashboardComponent,
+    EventManagerComponent,
     
   ],
   imports: [

@@ -1,0 +1,26 @@
+.eventButton {
+    display : block;
+    width : 100%; ;
+    border:none ;
+    font-size:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #123 ;
+    color:white;    
+}
+.eventInfo {
+    display : inline-block;
+    margin-left:15%;
+    font-size:35px;
+    margin-bottom:0px;
+    border-left :1px solid #123;
+    padding:10px;
+}
+.inputForm {
+    position:absolute;
+    left:40%;
+    width:400px;
+    border-radius:12px;
+    background: #123;
+    color : white;
+    text-align: center;
+}

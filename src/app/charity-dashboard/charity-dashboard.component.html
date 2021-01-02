@@ -1,1 +1,68 @@
-<p>charity-dashboard works!</p>
+<div >
+    <div>
+    <h1 style ='display:inline-block'>My Charity</h1>
+    <button class="action" (click)="triggerInput()">update<span class="glyphicon glyphicon-refresh" style ='margin-left:20px;font-size:15px;'aria-hidden="true"></span>
+    </button>
+    </div>
+    
+    <h2 class ="charityInfo" style ="margin-left:5%;">{{charity.name}}
+        <h4>Name</h4>
+    </h2>
+
+    <h2 class ="charityInfo">{{charity.slogan}}
+        <h4>Slogan</h4>
+    </h2>
+
+    <h2 class ="charityInfo">{{charity.location}}
+        <h4>Location</h4>
+    </h2>
+
+</div>
+<div >
+    <div style ="display: inline-block;margin-left:2%;">
+       
+         <h1>Logo</h1>
+        <img src='{{charity.logo}}'>
+    </div>
+
+    <div style ="display:inline-block;margin-left:10%;">
+        <h1 style ="margin-bottom: 20%;">Contact</h1>
+        <h4 *ngFor="let element of charity.contact">{{element}}</h4>
+    </div>
+
+    <div style ="display:inline-block;margin-left:10%;vertical-align: top;">
+        <h1>Rating</h1>
+        <h1 style ="font-size:40px;text-align: center;margin-top:40%;">{{charity.rating}}</h1>
+    </div>
+
+    <div style ="display:inline-block;margin-left:10%;vertical-align: top;">
+     <h1>Total Donations </h1>
+     <h1 style ='text-align: center;margin-top:20%;'>{{totalDonations}}</h1>
+    </div>
+
+
+</div>
+
+
+<div class="inputContainer" *ngIf ="showInput" >
+    <form>
+        <h1 class="inputLabel">Title</h1>
+        <input class='inputData'>
+        <h1 class="inputLabel">Slogan</h1>
+        <input class='inputData'>
+        <h1 class="inputLabel">Location</h1>
+        <input class='inputData'>
+        <h1 class="inputLabel">Logo URL</h1>
+        <input class='inputData'>
+        <h1 class="inputLabel">Contact</h1>
+        <input class='inputData' style ='margin-bottom:30px;'>
+    </form>
+
+</div>
+
+<div style ="margin-top:50px;border-top: 1px solid #123">
+    <app-event-manager [charityName]= charity.name [eventsArray]= charity.initiatives></app-event-manager>
+
+</div>
+
+

@@ -11,20 +11,32 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   authStatus   : Boolean ;
+  id : any ;
+  try : number =0;
   constructor(private authService : AuthServiceService,private router :Router) {
    
    }
   async login(username,password){
-   await this.authService.signIn(username,password);
-    this.authStatus = this.authService.isAuth;
-    this.router.navigate(['dashboard']);
+      this.authService.signIn(username,password).then(()=>{
+      this.authStatus = this.authService.isAuth;
+      this.id = this.authService.id;
+      this.router.navigate(['charitydashboard/'+this.id]);
+        if(this.id == 0){
+          this.try++;
+        }
+    });
+    
+  
+    
+
     }
     logout(){
       this.authService.isAuth = false;
       this.authStatus = this.authService.isAuth;
     }
 test(){
-  alert(this.authStatus);
+  alert(this.authService.isAuth);
+
 }
   
   ngOnInit(): void {

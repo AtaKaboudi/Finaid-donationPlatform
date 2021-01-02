@@ -1,0 +1,44 @@
+<h1>My Events</h1>
+
+<div *ngFor ="let event of eventsArray" style ='margin-bottom:50px;'>
+    <button class="eventButton" >
+        {{event}}
+        <button (click)='showEvent(event)' style="background:none;border:none;font-size:25px;"> <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span></button>
+    </button>
+    <div *ngIf ="eventDisplayed == event">
+
+        <div>
+        <h1 class="eventInfo">{{eventInfo.type}}<h2 style ="margin-top:0px;">Type</h2></h1>
+        <h1 class="eventInfo">{{eventInfo.time}}<h2 style ="margin-top:0px;">Time</h2></h1>
+        <h1 class="eventInfo">{{eventInfo.current_budget}}<h2 style ="margin-top:0px;">Budget</h2></h1>
+        </div>
+        <div class="inputForm"*ngIf="inputForm">
+            <form>
+                <h1>Name</h1>
+                <input style="width:250px;border-radius:8px;color:black">
+                <h1>Type</h1>
+                <input style="width:250px;border-radius:8px;color:black">
+                <h1>Date</h1>
+                <input style="width:250px;border-radius:8px;color:black">
+                <h1>Description</h1>
+                <input style="width:250px;border-radius:8px;color:black">
+                <h1>Image URL</h1>
+                <input style="width:250px; border-radius:8px;color:black;margin-bottom:30px;">
+                <button>Submit</button>
+            </form>
+        </div>
+        <div style ="margin-top:50px;width:100%;">
+            <img src="{{eventInfo.image}}">
+            <div style="margin-left:10%;display:inline-block;vertical-align: top; width:300px;">
+                <h2>Description</h2>
+            <p style ="font-size:20px;">{{eventInfo.longDescription}}</p>
+            </div>
+        </div>
+        <button (click)='triggerInput(event)'style ="position:relative;left:80%;font-size:20px;background:#123;color:white;border:none;">Update Event<span style="font-size:15px;margin-left:5px;" class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+     
+
+    </div>
+</div>
+
+
+

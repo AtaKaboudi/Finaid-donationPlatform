@@ -1,0 +1,40 @@
+.charityInfo {
+display : inline-block;
+margin-left:15%;
+border-left : 1px solid grey;
+margin-top:5%;
+font-size:30px;
+padding:10px;
+margin-bottom:5%;
+}
+.inputContainer {
+    width:50%;
+    background-color:rgb(17, 34, 51,0.9); 
+    position:absolute;
+    top:20%;
+    left:20%;
+    border-radius:12px;
+    
+}
+  
+.inputData{
+margin-left:30%;
+width:300px;
+height:30px; 
+}
+.inputLabel{
+margin-left:30%;
+color:white;
+font-size:25px;
+margin-bottom:2px;
+
+}
+.action{
+    display : inline-block;
+    position:relative;
+    left:70%;
+    background:rgb(17, 34, 51) ;
+    border:none;
+    color:white;
+    font-size:20px;
+}

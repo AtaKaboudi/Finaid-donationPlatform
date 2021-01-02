@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-charity',
@@ -11,7 +11,15 @@ export class CharityComponent implements OnInit {
   charityID ;
   charityInfo;
   totalDonations = 0;
-  constructor(private route :ActivatedRoute,private http: HttpClient) { }
+  totalEvents: number = 0;
+  constructor(private route :ActivatedRoute,private http: HttpClient,private router:Router) { }
+  navigateEvent(e){
+    
+    this.http.get("http://localhost:3000/initiative/names/"+e+"/"+this.charityInfo.name).toPromise().then((res)=>{
+    this.router.navigate(['event/'+res])
+  });
+  
+  }
 
   ngOnInit(): void {
     this.charityID = this.route.snapshot.params['id'];
@@ -21,6 +29,9 @@ export class CharityComponent implements OnInit {
     for ( let i of this.charityInfo.donations){
       this.totalDonations = this.totalDonations +  +i;
     }
+    this.charityInfo.initiatives.forEach(element => {
+    this.totalEvents += 1;      
+    });
     })
   }
 
