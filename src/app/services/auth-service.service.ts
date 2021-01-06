@@ -10,12 +10,19 @@ export class AuthServiceService {
   isAuth : boolean = false;
   id ;
   async signIn (username:String,password:String) {
-      await this.http.get('http://localhost:3000/charity/auth/'+username+'/'+password).subscribe((res : any)=>{
-    this.isAuth = res.exists;
+      await this.http.get('http://localhost:3000/charity/auth/'+username+'/'+password).toPromise().then((res : any)=>{
+   
+   // alert(' server respondede :'+this.id)
+      this.isAuth = res.exists;
     this.id = res.id ;
-
   })
+  }
 
+  signUp(charityName,username,password){
+   this.http.post('http://localhost:3000/charity/signup/'+charityName+'/'+username+'/'+password,{}).toPromise().then((res:any)=>{
+    this.isAuth = true ;
+    this.id = res.id ;
+   })
   }
 
  

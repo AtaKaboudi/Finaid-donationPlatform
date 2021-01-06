@@ -19,6 +19,7 @@ import { CharityDashboardComponent } from './charity-dashboard/charity-dashboard
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthServiceService } from './services/auth-service.service';
 import { EventManagerComponent } from './charity-dashboard/event-manager/event-manager.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoute : Routes = [
 {path: 'aboutus', component : AboutusComponent},
@@ -31,7 +32,7 @@ const appRoute : Routes = [
 {path:'charitydashboard/:id',canActivate:[AuthGuard],component:CharityDashboardComponent},
 {path:'**', redirectTo:'/notFound'}
 ]
-//,canActivate:[AuthGuard]
+
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ const appRoute : Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoute),
   ],
   providers: [

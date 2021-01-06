@@ -11,25 +11,44 @@
 </div>
 
 <div class="loginBlock">
-
+      <div *ngIf ="!login_signin">
         <h1 style="margin-left: 30%; margin-top:10%;color:#008CBA">Welcome</h1>
         <i class="glyphicon glyphicon-user" style="margin-top:5%;font-size: 50px ;left:40%;color:#008CBA;"></i>
-        <form *ngIf="!authStatus">
+
+         <form *ngIf="!authStatus" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
           <h2 style = "margin-top:5%;margin-left:20%; color:#555555">Username</h2>
-            <input class="input" #username>
+
+            <input class="input" formControlName="username" >
 
           <h2 style = " margin-top:5%;margin-left:20%; color:#555555"> Password</h2>
-            <input class="input" #password>
+            <input class="input" formControlName="password">
              <div *ngIf = "try != 0">
                <h4 style ='color:red; width:100%;text-align: center;'>Try again</h4>
              </div>  
-          <button class="loginButton" type ='button' (click)="login(username.value,password.value)"> Log in</button>               
-          <button style ="display:block; position:relative;left:45%;background-color: #008CBA;color:white;border:none;margin-top:5%;">Sign up</button>
+          <button class="loginButton" type ='submit' > Log in</button>               
+          <button (click)="login_signin = true"style ="display:block; position:relative;left:45%;background-color: #008CBA;color:white;border:none;margin-top:5%;">Sign up</button>
         </form> 
         <div *ngIf="authStatus">
           <i class="glyphicon glyphicon-ok" style="text-align:center;width:100%;font-size: 85px ;color:#008CBA;margin-top:16%;"></i>
           <button class="loginButton"  (click)="logout()"> Log Out</button>               
         </div>
+      </div>
+
+
+
+
+
+      <div *ngIf ="login_signin" style="margin-top:20%;">
+        <form  [formGroup]="SignUp_Form" (ngSubmit)="onSignIn(SignUp_Form.value)">
+          <h2 style='text-align: center;'>Charity Name</h2>
+          <input class ="input" formControlName='charityName' >
+          <h2 style='text-align: center;'>Username</h2>
+          <input class ="input"  formControlName='username'>
+          <h2 style='text-align: center;'>Password</h2>
+          <input class ="input" formControlName='password' >
+          <button class="loginButton" type ='submit'>Sign In</button>        
+        </form>
+      </div>
         
  </div>
  <button style ="background-color: black;" (click)= "test()" ></button>
